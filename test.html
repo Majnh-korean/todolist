@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <ul id="wrapper">
+  
+  </ul>
+  <script>
+    const render = () => {
+      // Tạo một mảng chứa HTML cho mỗi phần tử task
+      const taskHtml = Array.from({ length: 5 }, (_, i) => {
+        return `<li class="task">
+                  <span class="task-item">Task ${i}</span>
+                </li>`;
+      });
+      // Kết hợp các chuỗi HTML trong mảng thành một chuỗi duy nhất
+      return taskHtml.join('');
+    };
+    
+    const wrapper = document.getElementById('wrapper');
+    // Thêm chuỗi HTML được tạo bởi hàm render() vào phần tử ul
+    wrapper.innerHTML = render();
+    
+    const spanElement = document.querySelectorAll(".task .task-item");
+    console.log(spanElement);
+  </script>
+</body>
+</html>
